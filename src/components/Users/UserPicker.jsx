@@ -1,5 +1,16 @@
+import data from '../../static.json';
 export default function UserPicker() {
+    
+    const { users } = data;
+
+
     return (
-        <div>UserPicker</div>
+      <select>
+        {
+            users.map(user => (
+                <option key={user.id}>{user.name}</option>
+            ))
+        }
+      </select>
     )
 }

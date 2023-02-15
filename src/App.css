@@ -1,38 +1,88 @@
-.App {
+:root {
+  --page-bg: #eee7be;
+  --primary: #173f5f;
+  --button-bg: #20639b;
+  --light-text: #fff;
+}
+
+body {
+  background: var(--page-bg);
+  margin: 0;   /* no need to setup boxes, use natural approach of flex */
+  font-size: 16px;
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+header {
+  margin: 0;   /* let flex handle it */
+  padding: 1rem;
+  background: var(--primary);
+  display: flex; /* between nav and userPicker component in row directon */
+  justify-content: space-between; 
+  align-items: center;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+header li {
+  display: inline-block;
+  margin: 0 1rem 0 0;  /* margin on the right side of list item */
+  padding: 0;
+}
+
+
+header a.btn {
+  width: 9rem;
+}
+
+.btn {
+  background: var(--button-bg);
+  color: var(--light-text);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.btn:first-child {
+  margin-left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ /* a.btn {
+  text-decoration: none;
+  background-color: var(--primary);
+}  */
+
+.btn > svg:first-child {
+  margin-right: 0.4rem;
+}
+
+/* .btn > svg:last-child {
+  margin-left: 0.4rem;
+} */
+
+.btn:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.btn-header {
+  background: var(--primary);
+  border: 1px solid var(--button-bg);
+}
+
+.btn-header:hover {
+  border-color: var(--light-text);
 }
