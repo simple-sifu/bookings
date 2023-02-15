@@ -86,3 +86,21 @@ header a.btn {
 .btn-header:hover {
   border-color: var(--light-text);
 }
+
+main {
+  margin: 40px auto;
+  display: grid;
+}
+
+.bookings-page {
+  grid-template-columns: 1fr 5fr;
+  grid-column-gap: 20px;
+  margin: 40px 20px;
+}
+
+.bookables-page,
+.users-page {
+  max-width: 70em;
+  grid-template-columns: 1fr 3fr;
+  grid-column-gap: 40px;
+}
